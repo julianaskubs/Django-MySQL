@@ -13,8 +13,5 @@ class Aluno(models.Model):
         managed = False
         db_table = 'Aluno'
 
-    def salvar(self):
-        self.save()
-
     def __str__(self):
         return self.nome

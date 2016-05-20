@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .forms import AlunoForm
 from django.shortcuts import redirect
+from .models import Aluno
 
 
 def criar(request):
@@ -19,4 +20,11 @@ def criar(request):
 
 
 def listar(request):
-    return render(request, 'core/listar.html', {})
+    alunos = Aluno.objects.order_by('nome')
+    return render(request, 'core/listar.html', {'alunos': alunos})
+
+
+
+# Para mostrar um template que não tem conteúdo:
+# def listar(request):
+#     return render(request, 'core/listar.html', {})

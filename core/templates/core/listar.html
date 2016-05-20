@@ -1,3 +1,11 @@
 {% extends 'core/base.html' %}
 {% block content %}
+    {% for aluno in alunos %}
+        <div class="aluno">
+            <p>Nome: {{ aluno.nome }}</p>
+            <p>Data de Nascimento: {{ aluno.dt_nasc }}</p>
+            <p>RG: {{ aluno.rg }}</p>
+            <p>Endereço: {{ aluno.endereco }}</p>
+        </div>
+    {% endfor %}
 {% endblock %}
