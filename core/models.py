@@ -13,7 +13,7 @@ class Aluno(models.Model):
         managed = False
         db_table = 'Aluno'
 
-    def salvar(self):  # por enquanto ninguem usa esse metodo, nem o admin precisa dele.
+    def salvar(self):
         self.save()
 
     def __str__(self):

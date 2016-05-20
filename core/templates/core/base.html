@@ -1,12 +1,27 @@
 {% load staticfiles %}
 <html>
 <head>
+  <meta charset="utf-8">
+  <title>Django Mysql</title>
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+  <link href="http://fonts.googleapis.com/css?family=Sanchez&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="{% static 'css/core.css' %}">
-  <title>Django + Mysql</title>
+  <!--jquery-->
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script>
+    $(function() {
+              $( "#datepicker" ).datepicker();
+            });
+  </script>
 </head>
 <body>
+  <div class="page-header">
+    <h1><a href="/">Django MySQL</a></h1>
+  </div>
   <nav class="navbar navbar-default">
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
@@ -24,7 +39,7 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
           <li class="active"><a href="#">Listar<span class="sr-only">(current)</span></a></li>
-          <li><a href="#">Criar</a></li>
+          <li><a href="/core/criar" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a></li>
           <li><a href="#">Atualizar</a></li>
           <li><a href="#">Deletar</a></li>
           <!--<li class="dropdown">-->
@@ -47,7 +62,7 @@
           <button type="submit" class="btn btn-default">Submit</button>
         </form>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">Contato</a></li>
+          <li><a href="/admin">Login</a></li>
           <!--<li class="dropdown">-->
           <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>-->
           <!--<ul class="dropdown-menu">-->
@@ -59,12 +74,9 @@
           <!--</ul>-->
           <!--</li>-->
         </ul>
-      </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
+      </div>
+    </div>
   </nav>
-
-  <!--<div class="page-header">-->
-  <!--</div>-->
 
 <div class="content container">
   <div class="row">
