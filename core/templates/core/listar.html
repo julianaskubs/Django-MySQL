@@ -1,11 +1,37 @@
 {% extends 'core/base.html' %}
 {% block content %}
-    {% for aluno in alunos %}
-        <div class="aluno">
-            <p>Nome: {{ aluno.nome }}</p>
-            <p>Data de Nascimento: {{ aluno.dt_nasc }}</p>
-            <p>RG: {{ aluno.rg }}</p>
-            <p>Endereço: {{ aluno.endereco }}</p>
-        </div>
-    {% endfor %}
+
+    <table style="width:100%">
+        <tr>
+            <th>
+                Nome
+            </th>
+            <th>
+                Data de Nascimento
+            </th>
+            <th>
+                RG
+            </th>
+            <th>
+                Endereço
+            </th>
+        </tr>
+         {% for aluno in alunos %}
+        <tr>
+            <td>
+                 {{ aluno.nome }}
+            </td>
+            <td>
+                 {{ aluno.dt_nasc }}
+            </td>
+            <td>
+                {{ aluno.rg }}
+            </td>
+            <td>
+                {{ aluno.endereco }}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
 {% endblock %}

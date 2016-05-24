@@ -1,0 +1,64 @@
+{% extends 'core/base.html' %}
+{% block content %}
+<div class="container">
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                Nome
+            </th>
+            <th>
+                Data de Nascimento
+            </th>
+            <th>
+                RG
+            </th>
+            <th>
+                Endereço
+            </th>
+            <th>
+                Editar
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+         {% for aluno in alunos.object_list %}
+        <tr>
+            <td>
+                 {{ aluno.nome }}
+            </td>
+            <td>
+                 {{ aluno.dt_nasc }}
+            </td>
+            <td>
+                {{ aluno.rg }}
+            </td>
+            <td>
+                {{ aluno.endereco }}
+            </td>
+            <td>
+            <a class="btn btn-default" href="{% url 'aluno_edit' pk=aluno.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+    </table>
+    <div class="pagination pagination-sm">
+            {% if alunos.has_previous %}
+            <li><a href="?page={{ alunos.previous_page_number }}">Previous</a></li>
+            {% endif %}
+            {% for pg in alunos.paginator.page_range %}
+                {% if alunos.number == pg %}
+                <li class="active"><a href="?page={{ pg }}">{{ pg }}</a></li>
+                {% else %}
+                <li><a href="?page={{ pg }}">{{ pg }}</a></li>
+                {% endif %}
+            {% endfor %}
+
+            {% if alunos.has_next %}
+            <li><a href="?page={{ alunos.next_page_number }}">Next</a></li>
+            {% endif %}
+    </div>
+    </div>
+
+{% endblock %}
