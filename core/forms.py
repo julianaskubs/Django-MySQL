@@ -5,7 +5,9 @@ from .models import Aluno
 class AlunoForm(forms.ModelForm):
     dt_nasc = forms.DateField(label=u'Data de Nascimento',
                               widget=forms.TextInput(attrs={
-                                  'id': 'datepicker'}))
+                                  'id': 'datepicker',
+                                  'altField': "#actualDate",
+                              }))
 
     class Meta:
         model = Aluno

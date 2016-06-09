@@ -7,3 +7,5 @@ logs/*
 .idea/
 *.xml
 *.iml
+django-mysql.txt
+
